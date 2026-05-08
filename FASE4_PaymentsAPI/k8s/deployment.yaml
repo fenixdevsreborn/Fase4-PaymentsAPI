@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payments-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payments-worker
+  template:
+    metadata:
+      labels:
+        app: payments-worker
+    spec:
+      containers:
+      - name: payments-worker
+        image: fenixdevs/ms-payments-worker:latest
+        env:
+        - name: RabbitMq__Host
+          valueFrom:
+            configMapKeyRef:
+              name: payments-config
+              key: RABBITMQ_HOST
+        - name: RabbitMq__Password
+          valueFrom:
+            secretKeyRef:
+              name: payments-secrets
+              key: RABBITMQ_PASSWORD
