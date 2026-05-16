@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: payments-worker
-          image: fase4-payments-api:latest
+          image: adinteltidev/fase4-payments-api:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:
