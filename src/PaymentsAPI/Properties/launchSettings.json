@@ -1,0 +1,15 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "PaymentsAPI": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RabbitMq__PaymentQueueName": "payment-queue",
+        "RabbitMq__NotificationQueueName": "notification-queue"
+      }
+    }
+  }
+}
